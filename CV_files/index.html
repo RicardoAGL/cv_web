@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Language - Evelin Itzel Sanchez Alvarez</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      background: linear-gradient(180deg, #0288d1 0%, #01579b 100%);
+      color: white;
+    }
+    .language-menu {
+      text-align: center;
+    }
+    .language-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .flags {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .flag-link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .flag-link:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+    .flag {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="language-menu">
+    <div class="language-title">Select Your Language</div>
+    <div class="flags">
+      <a href="Evelin_CV_es.html" class="flag-link">
+        <div class="flag">🇪🇸</div>
+        Español
+      </a>
+      <a href="Evelin_CV_en.html" class="flag-link">
+        <div class="flag">🇬🇧</div>
+        English
+      </a>
+      <a href="Evelin_CV_nl.html" class="flag-link">
+        <div class="flag">🇳🇱</div>
+        Nederlands
+      </a>
+    </div>
+  </div>
+</body>
+</html>
