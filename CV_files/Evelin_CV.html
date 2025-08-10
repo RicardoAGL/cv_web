@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Evelin Itzel Sanchez Alvarez</title>
+    <style>
+        /* Removed Google Fonts import for portability */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            line-height: 1.5;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .cv-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        
+        .cv-header {
+            background-color: #0288d1;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cv-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .cv-title {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .tablink {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .tablink:hover {
+            background-color: #ddd;
+        }
+        
+        .tablink.active {
+            background-color: #0288d1;
+            color: white;
+        }
+        
+        .flag {
+            font-size: 1.2em;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: none;
+            animation: fadeEffect 0.5s;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .cv-content {
+            display: flex;
+            padding: 0;
+        }
+        
+        .cv-content-left {
+            width: 35%;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+        
+        .cv-content-right {
+            width: 65%;
+            padding: 30px;
+        }
+        
+        .cv-section {
+            margin-bottom: 25px;
+        }
+        
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cv-section-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0288d1;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .cv-profile {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        
+        .cv-skills-list {
+            list-style-type: none;
+        }
+        
+        .cv-skills-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .cv-skills-list li::before {
+            content: "•";
+            color: #0288d1;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .cv-experience-item {
+            margin-bottom: 20px;
+        }
+        
+        .cv-experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cv-job-title {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .cv-job-company {
+            font-weight: 400;
+            color: #0288d1;
+        }
+        
+        .cv-job-date {
+            color: #757575;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .cv-job-description {
+            margin-top: 5px;
+        }
+        
+        .cv-education-item {
+            margin-bottom: 15px;
+        }
+        
+        .cv-education-title {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .cv-education-institution {
+            font-weight: 400;
+            color: #0288d1;
+        }
+        
+        .cv-education-date {
+            color: #757575;
+            font-size: 14px;
+        }
+        
+        .cv-languages-list {
+            list-style-type: none;
+        }
+        
+        .cv-languages-list li {
+            margin-bottom: 8px;
+        }
+        
+        .cv-availability {
+            margin-top: 15px;
+        }
+        
+        .cv-availability p {
+            margin-bottom: 5px;
+        }
+        
+        .cv-preferences {
+            margin-top: 15px;
+        }
+        
+        .cv-preferences-list {
+            list-style-type: none;
+            counter-reset: preferences-counter;
+        }
+        
+        .cv-preferences-list li {
+            counter-increment: preferences-counter;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .cv-preferences-list li::before {
+            content: counter(preferences-counter) ".";
+            color: #0288d1;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .cv-portfolio {
+            margin-top: 15px;
+        }
+        
+        .social-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #0288d1;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: #01579b;
+        }
+        
+        .cv-additional-info {
+            list-style-type: none;
+        }
+        
+        .cv-additional-info li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .cv-additional-info li::before {
+            content: "✓";
+            color: #0288d1;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .cv-content {
+                flex-direction: column;
+            }
+            
+            .cv-content-left, .cv-content-right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="cv-header">
+            <h1 class="cv-name">Evelin Itzel Sanchez Alvarez</h1>
+            <div class="cv-contact">
+                <div class="cv-contact-item">📱 +31 (06) 3825 1288</div>
+                <div class="cv-contact-item">✉️ evelinbom5@gmail.com</div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tablink active" onclick="openLanguage('Spanish', this)"><span class="flag">🇪🇸</span>Español</button>
+            <button class="tablink" onclick="openLanguage('English', this)"><span class="flag">🇬🇧</span>English</button>
+            <button class="tablink" onclick="openLanguage('Dutch', this)"><span class="flag">🇳🇱</span>Nederlands</button>
+        </div>
+
+        <!-- Versión en Español -->
+        <div id="Spanish" class="tabcontent" style="display: block;">
+            <div class="cv-content">
+                <div class="cv-content-left">
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Habilidades</h2>
+                        <h3>Habilidades Manuales</h3>
+                        <ul class="cv-skills-list">
+                            <li>Crochet (especialidad en amigurumis)</li>
+                            <li>Elaboración de productos artesanales</li>
+                            <li>Repostería básica</li>
+                            <li>Pintura facial para niños</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Habilidades Personales</h3>
+                        <ul class="cv-skills-list">
+                            <li>Responsabilidad y puntualidad</li>
+                            <li>Creatividad</li>
+                            <li>Organización</li>
+                            <li>Capacidad de aprendizaje</li>
+                            <li>Trabajo en equipo</li>
+                            <li>Atención al cliente</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Multimedia y Tecnología</h3>
+                        <ul class="cv-skills-list">
+                            <li>Creación y edición básica de videos</li>
+                            <li>Fotografía básica</li>
+                            <li>Gestión básica de redes sociales</li>
+                            <li>Conocimientos básicos de computación</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Idiomas</h2>
+                        <ul class="cv-languages-list">
+                            <li><strong>Español:</strong> Nativo</li>
+                            <li><strong>Inglés:</strong> Nivel muy básico (A0-A1), comprensión limitada</li>
+                            <li><strong>Holandés:</strong> Nivel A0-A2 (en curso), comprensión básica</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Educación</h2>
+                        <div class="cv-education-item">
+                            <div class="cv-education-title">Preparatoria / Bachillerato</div>
+                            <div class="cv-education-institution">Instituto Tecnológico Lumen Gentium</div>
+                            <div>Via Morelos, Santa Maria Tulpetlac, Ecatepec de Morelos, México</div>
+                            <div class="cv-education-date">Graduada en 2013</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Disponibilidad</h2>
+                        <div class="cv-availability">
+                            <p><strong>Lunes:</strong> 9:00 - 14:00</p>
+                            <p><strong>Miércoles:</strong> 9:00 - 12:00</p>
+                            <p><strong>Jueves:</strong> 9:00 - 14:00</p>
+                            <p><strong>Viernes:</strong> 9:00 - 11:00</p>
+                            <p><strong>Fines de semana:</strong> 8:00 - 16:00</p>
+                            <p><strong>Nota:</strong> Solo disponible para trabajos a medio tiempo debido a responsabilidades familiares.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Portfolio</h2>
+                        <div class="cv-portfolio">
+                            <a href="https://www.instagram.com/lanamenita/" target="_blank" class="social-link">Ver galería en Instagram: @lanamenita</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-content-right">
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Perfil Profesional</h2>
+                        <div class="cv-profile">
+                            <p>Profesional responsable, organizada y creativa con experiencia en atención al cliente, gestión de almacén y habilidades manuales. Destaco por mi puntualidad, capacidad para trabajar en equipo y actitud servicial. Busco oportunidades laborales a medio tiempo en tiendas, manualidades, cuidado de niños o animales donde pueda aportar mi experiencia y desarrollar nuevas habilidades, mientras me permita atender mis responsabilidades familiares.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Experiencia Laboral</h2>
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Auxiliar de Almacén</div>
+                            <div class="cv-job-company">Fábrica de Calzado Andrea</div>
+                            <div class="cv-job-date">Agosto 2019 - Febrero 2020</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Gestión de pedidos cancelados y organización del almacén</li>
+                                    <li>Recepción e inventario de mercancía de proveedores</li>
+                                    <li>Registro de productos en sistema de inventario</li>
+                                    <li>Atención al cliente y operación ocasional de caja</li>
+                                    <li>Participación en inventarios generales de tienda</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Servicio de Limpieza (Independiente)</div>
+                            <div class="cv-job-date">Experiencia ocasional</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Limpieza doméstica y tareas del hogar en apartamentos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Artesana (Independiente)</div>
+                            <div class="cv-job-date">Actividad actual</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Elaboración y venta de artículos de crochet y amigurumis</li>
+                                    <li>Participación en bazares locales con productos artesanales</li>
+                                    <li>Elaboración y venta de productos de repostería</li>
+                                    <li>Creación de contenido para redes sociales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Voluntariado y Eventos</div>
+                            <div class="cv-job-date">Experiencia ocasional</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Pintura facial para niños en fiestas y eventos escolares</li>
+                                    <li>Colaboración en la organización y preparación de eventos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Cuidado de Niños (Niñera)</div>
+                            <div class="cv-job-date">Experiencia ocasional</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Cuidado de niños de 2 años</li>
+                                    <li>Experiencia como madre de una niña de 4 años</li>
+                                    <li>Interés especial en familias hispanohablantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Cuidado de Mascotas</div>
+                            <div class="cv-job-date">Experiencia personal</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Experiencia con perros de razas pequeñas y medianas</li>
+                                    <li>Disponible para cuidado ocasional de gatos y perros</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Preferencias Laborales</h2>
+                        <div class="cv-preferences">
+                            <ol class="cv-preferences-list">
+                                <li>Trabajo en tiendas</li>
+                                <li>Manualidades</li>
+                                <li>Cuidado de niños (especialmente familias hispanohablantes)</li>
+                                <li>Cuidado de mascotas</li>
+                                <li>Colaboración en eventos</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Información Adicional</h2>
+                        <ul class="cv-additional-info">
+                            <li>Dispuesta a recibir formación adicional para adaptarme a requisitos específicos del puesto.</li>
+                            <li>Interés en fotografía con conocimientos básicos y disposición para aprender y capacitarme si es necesario.</li>
+                            <li>Disponible para trabajos que requieran creatividad y habilidades manuales.</li>
+                            <li>Interesada en entornos laborales con posibilidad de comunicación en español mientras mejoro mi nivel de holandés.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Versión en Inglés -->
+        <div id="English" class="tabcontent">
+            <div class="cv-content">
+                <div class="cv-content-left">
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Skills</h2>
+                        <h3>Manual Skills</h3>
+                        <ul class="cv-skills-list">
+                            <li>Crochet (specializing in amigurumis)</li>
+                            <li>Creation of handcrafted products</li>
+                            <li>Basic baking</li>
+                            <li>Face painting for children</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Personal Skills</h3>
+                        <ul class="cv-skills-list">
+                            <li>Responsibility and punctuality</li>
+                            <li>Creativity</li>
+                            <li>Organization</li>
+                            <li>Learning capacity</li>
+                            <li>Teamwork</li>
+                            <li>Customer service</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Multimedia and Technology</h3>
+                        <ul class="cv-skills-list">
+                            <li>Basic video creation and editing</li>
+                            <li>Basic photography</li>
+                            <li>Basic social media management</li>
+                            <li>Basic computer knowledge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Languages</h2>
+                        <ul class="cv-languages-list">
+                            <li><strong>Spanish:</strong> Native</li>
+                            <li><strong>English:</strong> Very basic level (A0-A1), limited comprehension</li>
+                            <li><strong>Dutch:</strong> Level A0-A2 (in progress), basic comprehension</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Education</h2>
+                        <div class="cv-education-item">
+                            <div class="cv-education-title">High School</div>
+                            <div class="cv-education-institution">Instituto Tecnológico Lumen Gentium</div>
+                            <div>Via Morelos, Santa Maria Tulpetlac, Ecatepec de Morelos, Mexico</div>
+                            <div class="cv-education-date">Graduated in 2013</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Availability</h2>
+                        <div class="cv-availability">
+                            <p><strong>Monday:</strong> 9:00 - 14:00</p>
+                            <p><strong>Wednesday:</strong> 9:00 - 12:00</p>
+                            <p><strong>Thursday:</strong> 9:00 - 14:00</p>
+                            <p><strong>Friday:</strong> 9:00 - 11:00</p>
+                            <p><strong>Weekends:</strong> 8:00 - 16:00</p>
+                            <p><strong>Note:</strong> Only available for part-time work due to family responsibilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Portfolio</h2>
+                        <div class="cv-portfolio">
+                            <a href="https://www.instagram.com/lanamenita/" target="_blank" class="social-link">View gallery on Instagram: @lanamenita</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-content-right">
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Professional Profile</h2>
+                        <div class="cv-profile">
+                            <p>Responsible, organized, and creative professional with experience in customer service, warehouse management, and manual crafts. Known for punctuality, teamwork abilities, and helpful attitude. Seeking part-time job opportunities in retail, handicrafts, childcare, or pet care where I can contribute my experience and develop new skills, while allowing me to attend to my family responsibilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Work Experience</h2>
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Warehouse Assistant</div>
+                            <div class="cv-job-company">Andrea Shoe Factory</div>
+                            <div class="cv-job-date">August 2019 - February 2020</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Management of canceled orders and warehouse organization</li>
+                                    <li>Reception and inventory of merchandise from suppliers</li>
+                                    <li>Product registration in inventory system</li>
+                                    <li>Customer service and occasional cashier duties</li>
+                                    <li>Participation in general store inventories</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Cleaning Service (Independent)</div>
+                            <div class="cv-job-date">Occasional experience</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Domestic cleaning and household chores in apartments</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Craftswoman (Independent)</div>
+                            <div class="cv-job-date">Current activity</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Creation and sale of crochet items and amigurumis</li>
+                                    <li>Participation in local bazaars with handcrafted products</li>
+                                    <li>Preparation and sale of baked goods</li>
+                                    <li>Creation of content for social media</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Volunteering and Events</div>
+                            <div class="cv-job-date">Occasional experience</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Face painting for children at parties and school events</li>
+                                    <li>Collaboration in organizing and preparing events</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Childcare (Babysitting)</div>
+                            <div class="cv-job-date">Occasional experience</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Care of 2-year-old children</li>
+                                    <li>Experience as a mother of a 4-year-old daughter</li>
+                                    <li>Special interest in Spanish-speaking families</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-experience-item">
+                            <div class="cv-job-title">Pet Care</div>
+                            <div class="cv-job-date">Personal experience</div>
+                            <div class="cv-job-description">
+                                <ul>
+                                    <li>Experience with small and medium-sized dog breeds</li>
+                                    <li>Available for occasional care of cats and dogs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Job Preferences</h2>
+                        <div class="cv-preferences">
+                            <ol class="cv-preferences-list">
+                                <li>Retail work</li>
+                                <li>Handicrafts</li>
+                                <li>Childcare (especially Spanish-speaking families)</li>
+                                <li>Pet care</li>
+                                <li>Event assistance</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Additional Information</h2>
+                        <ul class="cv-additional-info">
+                            <li>Willing to receive additional training to adapt to specific job requirements.</li>
+                            <li>Interest in photography with basic knowledge and willingness to learn and train if necessary.</li>
+                            <li>Available for jobs requiring creativity and manual skills.</li>
+                            <li>Interested in work environments with the possibility of Spanish communication while improving my Dutch level.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Versión en Holandés -->
+        <div id="Dutch" class="tabcontent">
+            <div class="cv-content">
+                <div class="cv-content-left">
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Vaardigheden</h2>
+                        <h3>Handvaardigheden</h3>
+                        <ul class="cv-skills-list">
+                            <li>Haken (gespecialiseerd in amigurumi's)</li>
+                            <li>Creatie van handgemaakte producten</li>
+                            <li>Basis bakvaardigheden</li>
+                            <li>Gezichtsschilderen voor kinderen</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Persoonlijke Vaardigheden</h3>
+                        <ul class="cv-skills-list">
+                            <li>Verantwoordelijkheid en stiptheid</li>
+                            <li>Creativiteit</li>
+                            <li>Organisatie</li>
+                            <li>Leervermogen</li>
+                            <li>Teamwerk</li>
+                            <li>Klantenservice</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Multimedia en Technologie</h3>
+                        <ul class="cv-skills-list">
+                            <li>Basis video creatie en bewerking</li>
+                            <li>Basis fotografie</li>
+                            <li>Basis beheer van sociale media</li>
+                            <li>Basiskennis computers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Talen</h2>
+                        <ul class="cv-languages-list">
+                            <li><strong>Spaans:</strong> Moedertaal</li>
+                            <li><strong>Engels:</strong> Zeer basis niveau (A0-A1), beperkt begrip</li>
+                            <li><strong>Nederlands:</strong> Niveau A0-A2 (in ontwikkeling), basisbegrip</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h2 class="cv-section-title">Opleiding</h2>
+                        <div class="cv-education-item">
+                            <div class="cv-education-title">Middelbare School</div>
+<div class="cv-education-institution">Instituto Tecnológico Lumen Gentium</div>
+<div>Via Morelos, Santa Maria Tulpetlac, Ecatepec de Morelos, Mexico</div>
+<div class="cv-education-date">Afgestudeerd in 2013</div>
+</div>
+</div>
+
+<div class="cv-section">
+    <h2 class="cv-section-title">Beschikbaarheid</h2>
+    <div class="cv-availability">
+        <p><strong>Maandag:</strong> 9:00 - 14:00</p>
+        <p><strong>Woensdag:</strong> 9:00 - 12:00</p>
+        <p><strong>Donderdag:</strong> 9:00 - 14:00</p>
+        <p><strong>Vrijdag:</strong> 9:00 - 11:00</p>
+        <p><strong>Weekenden:</strong> 8:00 - 16:00</p>
+        <p><strong>Opmerking:</strong> Alleen beschikbaar voor deeltijdwerk vanwege gezinsverantwoordelijkheden.</p>
+    </div>
+</div>
+
+<div class="cv-section">
+    <h2 class="cv-section-title">Portfolio</h2>
+    <div class="cv-portfolio">
+        <a href="https://www.instagram.com/lanamenita/" target="_blank" class="social-link">Bekijk galerij op Instagram: @lanamenita</a>
+    </div>
+</div>
+</div>
+
+<div class="cv-content-right">
+    <div class="cv-section">
+        <h2 class="cv-section-title">Professioneel Profiel</h2>
+        <div class="cv-profile">
+            <p>Verantwoordelijke, georganiseerde en creatieve professional met ervaring in klantenservice, magazijnbeheer en handwerk. Bekend om stiptheid, vermogen om in teamverband te werken en een behulpzame houding. Op zoek naar deeltijdse baanmogelijkheden in winkels, handwerk, kinderopvang of dierenverzorging waar ik mijn ervaring kan inzetten en nieuwe vaardigheden kan ontwikkelen, terwijl ik mijn gezinsverantwoordelijkheden kan nakomen.</p>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="cv-section-title">Werkervaring</h2>
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Magazijnassistent</div>
+            <div class="cv-job-company">Andrea Schoenfabriek</div>
+            <div class="cv-job-date">Augustus 2019 - Februari 2020</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Beheer van geannuleerde bestellingen en organisatie van het magazijn</li>
+                    <li>Ontvangst en inventarisatie van goederen van leveranciers</li>
+                    <li>Productregistratie in het inventarissysteem</li>
+                    <li>Klantenservice en incidentele kassawerkzaamheden</li>
+                    <li>Deelname aan algemene winkelinventarissen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Schoonmaakdienst (Zelfstandig)</div>
+            <div class="cv-job-date">Incidentele ervaring</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Huishoudelijke schoonmaak en taken in appartementen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Ambachtsvrouw (Zelfstandig)</div>
+            <div class="cv-job-date">Huidige activiteit</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Creatie en verkoop van gehaakte artikelen en amigurumi's</li>
+                    <li>Deelname aan lokale bazaars met handgemaakte producten</li>
+                    <li>Bereiding en verkoop van bakproducten</li>
+                    <li>Contentcreatie voor sociale media</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Vrijwilligerswerk en Evenementen</div>
+            <div class="cv-job-date">Incidentele ervaring</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Gezichtsschilderen voor kinderen op feesten en schoolactiviteiten</li>
+                    <li>Medewerking aan de organisatie en voorbereiding van evenementen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Kinderopvang (Oppas)</div>
+            <div class="cv-job-date">Incidentele ervaring</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Zorg voor kinderen van 2 jaar</li>
+                    <li>Ervaring als moeder van een dochter van 4 jaar</li>
+                    <li>Bijzondere interesse in Spaanstalige gezinnen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-experience-item">
+            <div class="cv-job-title">Dierenverzorging</div>
+            <div class="cv-job-date">Persoonlijke ervaring</div>
+            <div class="cv-job-description">
+                <ul>
+                    <li>Ervaring met kleine en middelgrote hondenrassen</li>
+                    <li>Beschikbaar voor incidentele zorg voor katten en honden</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="cv-section-title">Werkvoorkeuren</h2>
+        <div class="cv-preferences">
+            <ol class="cv-preferences-list">
+                <li>Winkelwerk</li>
+                <li>Handwerk</li>
+                <li>Kinderopvang (vooral Spaanstalige gezinnen)</li>
+                <li>Dierenverzorging</li>
+                <li>Evenementenassistentie</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="cv-section-title">Aanvullende Informatie</h2>
+        <ul class="cv-additional-info">
+            <li>Bereid om extra training te volgen om aan specifieke functie-eisen te voldoen.</li>
+            <li>Interesse in fotografie met basiskennis en bereidheid om te leren en te trainen indien nodig.</li>
+            <li>Beschikbaar voor banen die creativiteit en handvaardigheid vereisen.</li>
+            <li>Geïnteresseerd in werkomgevingen met de mogelijkheid tot communicatie in het Spaans terwijl ik mijn Nederlands verbeter.</li>
+        </ul>
+    </div>
+</div>
+</div>
+<script>
+function openLanguage(language, btn) {
+    // Hide all tabcontent
+    var tabcontents = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].style.display = "none";
+    }
+    // Remove active class from all tablinks
+    var tablinks = document.getElementsByClassName("tablink");
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    // Show selected language tab
+    var selected = document.getElementById(language);
+    if (selected) {
+        selected.style.display = "block";
+    }
+    // Add active class to the clicked button
+    if (btn) {
+        btn.classList.add("active");
+    }
+}
+
+</script>
